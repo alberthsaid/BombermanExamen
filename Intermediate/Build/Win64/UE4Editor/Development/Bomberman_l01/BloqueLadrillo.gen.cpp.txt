@@ -1,7 +1,0 @@
-C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Definitions.Bomberman_l01.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01/BloqueLadrillo.h
-C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\Bloque.h
-C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\Bloque.generated.h
-C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\BloqueLadrillo.generated.h

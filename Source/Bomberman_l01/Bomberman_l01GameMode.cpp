@@ -15,7 +15,8 @@
 #include "BloqueBurbuja.h"
 #include "BloqueOro.h"
 #include "Kismet/GameplayStatics.h"
-
+#include "Bomba.h"
+#include "Engine/World.h"
 
 ABomberman_l01GameMode::ABomberman_l01GameMode()
 {
@@ -25,10 +26,34 @@ ABomberman_l01GameMode::ABomberman_l01GameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+	//if (aEspaciosVaciosBordes.Num() > 0 && MiClaseDePersonaje)
+	//{
+	//	int32 indiceAleatorio = FMath::RandRange(0, aEspaciosVaciosBordes.Num() - 1);
+	//	FVector posicionInicial = aEspaciosVaciosBordes[indiceAleatorio];
+
+	//	// Spawn del personaje
+
+	//	FActorSpawnParameters spawnParams;
+	//	APawn* personaje = GetWorld()->SpawnActor<APawn>(MiClaseDePersonaje, posicionInicial, FRotator::ZeroRotator, spawnParams);
+
+	//	// Asignar control
+	//	APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	//	if (PC && personaje)
+	//	{
+	//		PC->Possess(personaje);
+	//	}
+	//}
+	//int32 filaInicial = 0;  // O cualquier fila de borde que elijas
+	//int32 columnaInicial = 0;  // O cualquier columna de borde que elijas
+
+	//FVector posicionInicial = FVector(XInicial + columnaInicial * AnchoBloque, YInicial + filaInicial * LargoBloque, 20.0f);
+	//APeonExamen* Peon = GetWorld()->SpawnActor<APeonExamen>(APeonExamen::StaticClass(), posicionInicial, FRotator::ZeroRotator);	GetWorld()->GetTimerManager().SetTimer(TemporizadorInicial, this, &ABomberMan_012025GameMode::IniciarDesaparicionBloquesMadera, 10.0f, false);
+
 }
 void ABomberman_l01GameMode::BeginPlay()
 {
 	Super::BeginPlay();
+	SpawnBombaEnEspacioVacio();
 	GEngine->AddOnScreenDebugMessage(-1, -1, FColor::Red, TEXT("Bloque Spawning"));
 	aMapaBloques.SetNum(50);
 	for (int32 i = 0; i < 50; i++) {
@@ -107,8 +132,8 @@ void ABomberman_l01GameMode::BeginPlay()
 
 	if (aEspaciosVaciosBordes.Num() > 0 && MiClaseDePersonaje)
 	{
-		int32 indiceAleatorio = FMath::RandRange(0, aEspaciosVaciosBordes.Num() - 1);
-		FVector posicionInicial = aEspaciosVaciosBordes[indiceAleatorio];
+	int32 indiceAleatorio = FMath::RandRange(0, aEspaciosVaciosBordes.Num() - 1);
+	FVector posicionInicial = aEspaciosVaciosBordes[indiceAleatorio];
 
 		// Spawn del personaje
 
@@ -143,6 +168,104 @@ void ABomberman_l01GameMode::SpawnPersonaje()
 {
 
 }
+//void ABomberman_l01GameMode::SpawnPersonajeCercaDeBloqueMadera()
+//{
+//	TArray<FVector> EspaciosCercanos;
+//
+//	// Recorremos los bloques para encontrar los de tipo BloqueMadera
+//	for (ABloque* Bloque : aBloques)
+//	{
+//		if (ABloqueMadera* BloqueMadera = Cast<ABloqueMadera>(Bloque))
+//		{
+//			FVector PosicionBloque = BloqueMadera->GetActorLocation();
+//
+//			// Calculamos las posiciones adyacentes
+//			TArray<FVector> PosicionesAdyacentes = {
+//				PosicionBloque + FVector(AnchoBloque, 0, 0),  // Derecha
+//				PosicionBloque - FVector(AnchoBloque, 0, 0),  // Izquierda
+//				PosicionBloque + FVector(0, LargoBloque, 0),  // Arriba
+//				PosicionBloque - FVector(0, LargoBloque, 0)   // Abajo
+//			};
+//
+//			// Verificamos si las posiciones adyacentes están en la lista de espacios vacíos
+//			for (const FVector& Posicion : PosicionesAdyacentes)
+//			{
+//				if (aEspaciosVacios.Contains(Posicion))
+//				{
+//					EspaciosCercanos.Add(Posicion);
+//				}
+//			}
+//		}
+//	}
+//
+//	// Si encontramos espacios vacíos cercanos, seleccionamos uno aleatoriamente
+//	if (EspaciosCercanos.Num() > 0 && MiClaseDePersonaje)
+//	{
+//		int32 IndiceAleatorio = FMath::RandRange(0, EspaciosCercanos.Num() - 1);
+//		FVector PosicionInicial = EspaciosCercanos[IndiceAleatorio];
+//
+//		// Spawneamos el personaje
+//		FActorSpawnParameters SpawnParams;
+//		APawn* Personaje = GetWorld()->SpawnActor<APawn>(MiClaseDePersonaje, PosicionInicial, FRotator::ZeroRotator, SpawnParams);
+//
+//		// Asignamos el control al jugador
+//		APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+//		if (PC && Personaje)
+//		{
+//			PC->Possess(Personaje);
+//		}
+//	}
+//}
+
+//void ABomberman_l01GameMode::SpawnPersonajeCercaDeBloqueMadera()
+//{
+//	TArray<FVector> EspaciosCercanos;
+//
+//	// Recorremos los bloques para encontrar los de tipo BloqueMadera
+//	for (ABloque* Bloque : aBloques)
+//	{
+//		if (ABloqueMadera* BloqueMadera = Cast<ABloqueMadera>(Bloque))
+//		{
+//			FVector PosicionBloque = BloqueMadera->GetActorLocation();
+//
+//			// Calculamos las posiciones adyacentes
+//			TArray<FVector> PosicionesAdyacentes = {
+//				PosicionBloque + FVector(AnchoBloque, 0, 0),  // Derecha
+//				PosicionBloque - FVector(AnchoBloque, 0, 0),  // Izquierda
+//				PosicionBloque + FVector(0, LargoBloque, 0),  // Arriba
+//				PosicionBloque - FVector(0, LargoBloque, 0)   // Abajo
+//			};
+//
+//			// Verificamos si las posiciones adyacentes están en la lista de espacios vacíos
+//			for (const FVector& Posicion : PosicionesAdyacentes)
+//			{
+//				if (aEspaciosVacios.Contains(Posicion))
+//				{
+//					EspaciosCercanos.Add(Posicion);
+//				}
+//			}
+//		}
+//	}
+//
+//	// Si encontramos espacios vacíos cercanos, seleccionamos uno aleatoriamente
+//	if (EspaciosCercanos.Num() > 0 && MiClaseDePersonaje)
+//	{
+//		int32 IndiceAleatorio = FMath::RandRange(0, EspaciosCercanos.Num() - 1);
+//		FVector PosicionInicial = EspaciosCercanos[IndiceAleatorio];
+//
+//		// Spawneamos el personaje
+//		FActorSpawnParameters SpawnParams;
+//		APawn* Personaje = GetWorld()->SpawnActor<APawn>(MiClaseDePersonaje, PosicionInicial, FRotator::ZeroRotator, SpawnParams);
+//
+//		// Asignamos el control al jugador
+//		APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+//		if (PC && Personaje)
+//		{
+//			PC->Possess(Personaje);
+//		}
+//	}
+//}
+
 
 /*/void ABomberMan_012025GameMode::MoverBloques()
 {
@@ -220,14 +343,45 @@ void ABomberman_l01GameMode::DestruirBloque()
 		GetWorld()->GetTimerManager().ClearTimer(tHDestruirBloques);
 	}
 }
-	// Spawn the Bloque actor
-	//FRotator SpawnRotation (0.0f, 0.0f, 0.0f);
-	//for (int i = 0; i < 10; i++)
-	//{
-	//	/*for (int j = 0; j < 10; j++)
-	//	{
-	//		FVector SpawnLocation(i * 400 - 1700.f, j * 400 - 1700.f, 130.0f);
-	//		ABloque* Bloque = GetWorld()->SpawnActor<ABloque>(ABloque::StaticClass(), SpawnLocation, SpawnRotation);
-	//	}*/
-	//	FVector SpawnLocation(i * 400 - 1700.f, 40.0f, 130.0f);
-	//	ABloque* Bloque = GetWorld()->SpawnActor<ABloque>(ABloque::StaticClass(), SpawnLocation, SpawnRotation);
+void ABomberman_l01GameMode::SpawnBombaEnEspacioVacio()
+{
+	if (aEspaciosVacios.Num() > 0)
+	{
+		// Seleccionar un espacio vacío aleatorio
+		int32 IndiceAleatorio = FMath::RandRange(0, aEspaciosVacios.Num() - 1);
+		FVector PosicionBomba = aEspaciosVacios[IndiceAleatorio];
+
+		// Spawnear la bomba
+		FActorSpawnParameters SpawnParams;
+		ABomba* Bomba = GetWorld()->SpawnActor<ABomba>(ABomba::StaticClass(), PosicionBomba, FRotator::ZeroRotator, SpawnParams);
+
+		if (Bomba)
+		{
+			// Configurar la explosión para que llame a ManejarExplosion
+			Bomba->OnExplota.AddDynamic(this, &ABomberman_l01GameMode::ManejarExplosion);
+		}
+	}
+}
+void ABomberman_l01GameMode::ManejarExplosion(FVector PosicionExplosion)
+{
+	// Calcular las posiciones de los bloques en un radio de 2 bloques
+	for (int32 OffsetX = -2; OffsetX <= 2; ++OffsetX)
+	{
+		for (int32 OffsetY = -2; OffsetY <= 2; ++OffsetY)
+		{
+			FVector PosicionBloque = PosicionExplosion + FVector(OffsetX * AnchoBloque, OffsetY * LargoBloque, 0.0f);
+
+			// Buscar y destruir el bloque en esta posición
+			for (int32 i = 0; i < aBloques.Num(); ++i)
+			{
+				if (aBloques[i] && aBloques[i]->GetActorLocation().Equals(PosicionBloque, 1.0f))
+				{
+					aBloques[i]->Destroy();
+					aBloques.RemoveAt(i);
+					break;
+				}
+			}
+		}
+	}
+}
+	

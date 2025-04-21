@@ -19,7 +19,7 @@ ABloque::ABloque()
 	if (BloqueMesh.Succeeded())
 	{
 		MallaBloque->SetStaticMesh(BloqueMesh.Object);
-		MallaBloque->SetRelativeScale3D(FVector(1.5f, 1.5f, 1.5f));
+		MallaBloque->SetRelativeScale3D(FVector(1.5f, 1.5f, 3.5f));
 		MallaBloque->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
 	}
 	MallaBloque->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);

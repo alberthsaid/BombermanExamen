@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Bomberman_l01.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{5BF81AF3-CFE9-4D98-A6A6-13BCF0E43634}</UniqueIdentifier>
+      <UniqueIdentifier>{EA732AF8-503D-427B-B05C-B5EFA0655D0D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Bomberman_l01.Target.cs">
       <Filter>Source</Filter>
@@ -11,8 +11,10 @@
     <None Include="..\..\Source\Bomberman_l01Editor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{8B992038-ED7B-4992-8064-B35138A29E09}</UniqueIdentifier>
+      <UniqueIdentifier>{395FD59B-334D-4F81-A908-5E603E78F286}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +32,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Bomberman_l01">
-      <UniqueIdentifier>{37062F36-709B-4BCE-BADE-FC0E24A8BB26}</UniqueIdentifier>
+      <UniqueIdentifier>{B661571B-33C7-4C52-A42C-B341E8D51EAD}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Bomberman_l01\Bloque.cpp">
       <Filter>Source\Bomberman_l01</Filter>
@@ -96,6 +98,12 @@
       <Filter>Source\Bomberman_l01</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Bomberman_l01\BloqueVidrio.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\Bomba.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\Bomba.h">
       <Filter>Source\Bomberman_l01</Filter>
     </ClInclude>
     <None Include="..\..\Source\Bomberman_l01\Bomberman_l01.Build.cs">

@@ -5,8 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "Bomberman_l01GameMode.generated.h"
-
 class ABloque;
+class ABomba;
 UCLASS(minimalapi)
 class ABomberman_l01GameMode : public AGameModeBase
 {
@@ -42,10 +42,11 @@ public:
 	//void MoverBloques();
 	//void SpawnBloques();
 	void SpawnBloque(FVector posicion, int32 tipoBloque);
-
+	//void SpawnPersonajeCercaDeBloqueMadera();
 	void DestruirBloque();
-
-
+	void SpawnBombaEnEspacioVacio();
+	void ManejarExplosion(FVector PosicionExplosion);
+	
 };
 
 

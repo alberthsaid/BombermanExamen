@@ -31,12 +31,12 @@ void ABloqueLadrillo::Tick(float DeltaTime)
 	if (bPuedeMoverse)
 	{
 		FVector NewLocation = PosicionInicial;
-		NewLocation.Z = FMath::Sin(GetGameTimeSinceCreation() * FloatSpeed) * 170.0f + 190.0f;
+		NewLocation.Z = FMath::Sin(GetGameTimeSinceCreation() * FloatSpeed) * 100.0f + 120.0f;
 		SetActorLocation(NewLocation);
 	}
 	else {
 		FVector NewLocation = PosicionInicial;
-		NewLocation.X = PosicionInicial.X + FMath::Sin(GetGameTimeSinceCreation() * FloatSpeed) * 100.0f;
+		NewLocation.X = PosicionInicial.X + FMath::Sin(GetGameTimeSinceCreation() * FloatSpeed) * 50.0f;
 		SetActorLocation(NewLocation);
 	}
 }
