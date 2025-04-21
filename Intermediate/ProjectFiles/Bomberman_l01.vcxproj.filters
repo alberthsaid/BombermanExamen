@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Bomberman_l01.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{5BF81AF3-CFE9-4D98-A6A6-13BCF0E43634}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Bomberman_l01.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\Bomberman_l01Editor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{8B992038-ED7B-4992-8064-B35138A29E09}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Bomberman_l01">
+      <UniqueIdentifier>{37062F36-709B-4BCE-BADE-FC0E24A8BB26}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\Bomberman_l01\Bloque.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\Bloque.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\BloqueAcero.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\BloqueAcero.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\BloqueAgua.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\BloqueAgua.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\BloqueArena.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\BloqueArena.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\BloqueBurbuja.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\BloqueBurbuja.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\BloqueConcreto.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\BloqueConcreto.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\BloqueElectrico.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\BloqueElectrico.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\BloqueLadrillo.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\BloqueLadrillo.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\BloqueMadera.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\BloqueMadera.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\BloqueOro.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\BloqueOro.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\BloqueVidrio.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\BloqueVidrio.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\Bomberman_l01\Bomberman_l01.Build.cs">
+      <Filter>Source\Bomberman_l01</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Bomberman_l01\Bomberman_l01.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\Bomberman_l01.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\Bomberman_l01Character.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\Bomberman_l01Character.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Bomberman_l01\Bomberman_l01GameMode.cpp">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Bomberman_l01\Bomberman_l01GameMode.h">
+      <Filter>Source\Bomberman_l01</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

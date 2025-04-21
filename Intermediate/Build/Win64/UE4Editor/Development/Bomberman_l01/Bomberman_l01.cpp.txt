@@ -1,0 +1,2 @@
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Definitions.Bomberman_l01.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\Bomberman_l01.h

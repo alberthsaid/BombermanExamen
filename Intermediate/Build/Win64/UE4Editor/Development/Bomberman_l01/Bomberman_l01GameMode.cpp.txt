@@ -1,0 +1,46 @@
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Definitions.Bomberman_l01.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\Bomberman_l01GameMode.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\Bomberman_l01GameMode.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\Bomberman_l01Character.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\Bomberman_l01Character.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\Bloque.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\Bloque.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\BloqueAcero.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\BloqueAcero.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\BloqueAgua.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\BloqueAgua.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\BloqueVidrio.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\BloqueVidrio.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\BloqueLadrillo.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\BloqueLadrillo.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\BloqueMadera.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\BloqueMadera.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\BloqueConcreto.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\BloqueConcreto.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\BloqueElectrico.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\BloqueElectrico.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\BloqueArena.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\BloqueArena.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\BloqueBurbuja.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\BloqueBurbuja.generated.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Source\Bomberman_l01\BloqueOro.h
+C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Inc\Bomberman_l01\BloqueOro.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Sound/DialogueTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DialogueTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet\GameplayStaticsTypes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h
