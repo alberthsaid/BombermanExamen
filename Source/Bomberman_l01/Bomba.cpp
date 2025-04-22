@@ -16,10 +16,12 @@ ABomba::ABomba()
 	RootComponent = MallaBomba;
 
 	// Asignar una malla estática (reemplaza con la ruta de tu malla)
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> BombaMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> BombaMesh(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_TriPyramid.Shape_TriPyramid'"));
 	if (BombaMesh.Succeeded())
 	{
 		MallaBomba->SetStaticMesh(BombaMesh.Object);
+		MallaBomba->SetRelativeScale3D(FVector(2.5f, 2.5f, 2.5f)); // Escalar la malla
+		MallaBomba->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 	}
 
 	// Configurar valores predeterminados

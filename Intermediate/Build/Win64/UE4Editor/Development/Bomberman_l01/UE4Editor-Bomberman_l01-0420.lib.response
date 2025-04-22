@@ -3,7 +3,7 @@
 /MACHINE:x64
 /SUBSYSTEM:WINDOWS
 /DEF
-/NAME:"UE4Editor-Bomberman_l01-0053.dll"
+/NAME:"UE4Editor-Bomberman_l01-0420.dll"
 /IGNORE:4221
 /NODEFAULTLIB
 "C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\Bomberman_l01Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
@@ -22,6 +22,7 @@
 "C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01.cpp.obj"
 "C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01Character.cpp.obj"
 "C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01GameMode.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Plataforma.cpp.obj"
 "C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bloque.gen.cpp.obj"
 "C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueAcero.gen.cpp.obj"
 "C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueAgua.gen.cpp.obj"
@@ -37,5 +38,6 @@
 "C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01.init.gen.cpp.obj"
 "C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01Character.gen.cpp.obj"
 "C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01GameMode.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Plataforma.gen.cpp.obj"
 "C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Default.rc2.res"
-/OUT:"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\UE4Editor-Bomberman_l01-0053.lib"
+/OUT:"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\UE4Editor-Bomberman_l01-0420.lib"

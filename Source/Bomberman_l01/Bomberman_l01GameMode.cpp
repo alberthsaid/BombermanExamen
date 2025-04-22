@@ -17,6 +17,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Bomba.h"
 #include "Engine/World.h"
+#include "Plataforma.h"
 
 ABomberman_l01GameMode::ABomberman_l01GameMode()
 {
@@ -53,7 +54,10 @@ ABomberman_l01GameMode::ABomberman_l01GameMode()
 void ABomberman_l01GameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	SpawnBombaEnEspacioVacio();
+
+	FVector SpawnLocation (-399.751f, 0.0f, 0.0f);
+	APlataforma* Plataforma = GetWorld()->SpawnActor<APlataforma>(APlataforma::StaticClass(), SpawnLocation, FRotator::ZeroRotator);
+	//SpawnBombaEnEspacioVacio();
 	GEngine->AddOnScreenDebugMessage(-1, -1, FColor::Red, TEXT("Bloque Spawning"));
 	aMapaBloques.SetNum(50);
 	for (int32 i = 0; i < 50; i++) {
@@ -155,14 +159,14 @@ void ABomberman_l01GameMode::BeginPlay()
 
 }
 
-void ABomberman_l01GameMode::IniciarDesaparicionBloquesMadera()
-{
-	if (aBloques.Num() > 0)
-	{
-		GetWorld()->GetTimerManager().SetTimer(tHDestruirBloques, this, &ABomberman_l01GameMode::DestruirBloque, 5.0f, true);
-
-	}
-}
+//void ABomberman_l01GameMode::IniciarDesaparicionBloquesMadera()
+//{
+//	if (aBloques.Num() > 0)
+//	{
+//		GetWorld()->GetTimerManager().SetTimer(tHDestruirBloques, this, &ABomberman_l01GameMode::DestruirBloque, 5.0f, true);
+//
+//	}
+//}
 
 void ABomberman_l01GameMode::SpawnPersonaje()
 {
@@ -283,105 +287,144 @@ void ABomberman_l01GameMode::SpawnPersonaje()
 }*/
 
 void ABomberman_l01GameMode::SpawnBloque(FVector posicionBloque, int32 tipoBloque)
-{
-	ABloque* BloqueGenerado = nullptr;
-	int32 fila = (posicionBloque.Y - YInicial) / LargoBloque;
-	int32 columna = (posicionBloque.X - XInicial) / AnchoBloque;
-	switch (tipoBloque)
+{    
+	float DistanciaMinimaX = 150.0f; // 100 * 1.5
+    float DistanciaMinimaY = 150.0f; // 100 * 1.5
+    // Verificar que no haya bloques cercanos dentro de la distancia mínima
+    bool bEspacioValido = true;
+	for (ABloque* BloqueExistente : aBloques)
 	{
-	case 1: BloqueGenerado = GetWorld()->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-		break;
-	case 2: BloqueGenerado = GetWorld()->SpawnActor<ABloqueConcreto>(ABloqueConcreto::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-		break;
-	case 3: BloqueGenerado = GetWorld()->SpawnActor<ABloqueAgua>(ABloqueAgua::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-		break;
-	case 4: BloqueGenerado = GetWorld()->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-		break;
-	case 5: BloqueGenerado = GetWorld()->SpawnActor<ABloqueBurbuja>(ABloqueBurbuja::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-		break;
-	case 6: BloqueGenerado = GetWorld()->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-		break;
-	case 7: BloqueGenerado = GetWorld()->SpawnActor<ABloqueElectrico>(ABloqueElectrico::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-		break;
-	case 8: BloqueGenerado = GetWorld()->SpawnActor<ABloqueOro>(ABloqueOro::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-		break;
-	case 9: BloqueGenerado = GetWorld()->SpawnActor<ABloqueVidrio>(ABloqueVidrio::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-		break;
-	case 10: BloqueGenerado = GetWorld()->SpawnActor<ABloqueArena>(ABloqueArena::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
-		break;
-	default:
-		break;
-	}
-	if (BloqueGenerado)
-	{
-		aBloques.Add(BloqueGenerado);
-	}
-
-}
-
-void ABomberman_l01GameMode::DestruirBloque()
-{
-	int numeroBloques = aBloques.Num();
-	int NumeroAleatorio = FMath::RandRange(0, numeroBloques);
-
-	if (aBloques.Num() > 0)
-	{
-		BloqueActual = aBloques[NumeroAleatorio]; // Obtén el primer bloque
-		if (BloqueActual)
+		if (BloqueExistente)
 		{
-			BloqueActual->Destroy(); // Destruye el bloque
-			GEngine->AddOnScreenDebugMessage(-1, -1, FColor::Red, TEXT("Bloque Eliminado"));
-
-
-			// Realiza operaciones con el bloque
-			//primerBloque->SetActorLocation(FVector(100.0f, 100.0f, 100.0f));
-		}
-	}
-	else
-	{
-		// Cuando se destruyen todos, detenemos el timer
-		GetWorld()->GetTimerManager().ClearTimer(tHDestruirBloques);
-	}
-}
-void ABomberman_l01GameMode::SpawnBombaEnEspacioVacio()
-{
-	if (aEspaciosVacios.Num() > 0)
-	{
-		// Seleccionar un espacio vacío aleatorio
-		int32 IndiceAleatorio = FMath::RandRange(0, aEspaciosVacios.Num() - 1);
-		FVector PosicionBomba = aEspaciosVacios[IndiceAleatorio];
-
-		// Spawnear la bomba
-		FActorSpawnParameters SpawnParams;
-		ABomba* Bomba = GetWorld()->SpawnActor<ABomba>(ABomba::StaticClass(), PosicionBomba, FRotator::ZeroRotator, SpawnParams);
-
-		if (Bomba)
-		{
-			// Configurar la explosión para que llame a ManejarExplosion
-			Bomba->OnExplota.AddDynamic(this, &ABomberman_l01GameMode::ManejarExplosion);
-		}
-	}
-}
-void ABomberman_l01GameMode::ManejarExplosion(FVector PosicionExplosion)
-{
-	// Calcular las posiciones de los bloques en un radio de 2 bloques
-	for (int32 OffsetX = -2; OffsetX <= 2; ++OffsetX)
-	{
-		for (int32 OffsetY = -2; OffsetY <= 2; ++OffsetY)
-		{
-			FVector PosicionBloque = PosicionExplosion + FVector(OffsetX * AnchoBloque, OffsetY * LargoBloque, 0.0f);
-
-			// Buscar y destruir el bloque en esta posición
-			for (int32 i = 0; i < aBloques.Num(); ++i)
+			FVector PosicionExistente = BloqueExistente->GetActorLocation();
+			if (FMath::Abs(PosicionExistente.X - posicionBloque.X) < DistanciaMinimaX &&
+				FMath::Abs(PosicionExistente.Y - posicionBloque.Y) < DistanciaMinimaY)
 			{
-				if (aBloques[i] && aBloques[i]->GetActorLocation().Equals(PosicionBloque, 1.0f))
-				{
-					aBloques[i]->Destroy();
-					aBloques.RemoveAt(i);
-					break;
-				}
+				bEspacioValido = false;
+				break;
 			}
 		}
 	}
+	if (bEspacioValido)
+	{
+		ABloque* BloqueGenerado = nullptr;
+		int32 fila = (posicionBloque.Y - YInicial) / LargoBloque;
+		int32 columna = (posicionBloque.X - XInicial) / AnchoBloque;
+		switch (tipoBloque)
+		{
+		case 1: BloqueGenerado = GetWorld()->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
+			break;
+		case 2: BloqueGenerado = GetWorld()->SpawnActor<ABloqueConcreto>(ABloqueConcreto::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
+			break;
+		case 3: BloqueGenerado = GetWorld()->SpawnActor<ABloqueAgua>(ABloqueAgua::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
+			break;
+		case 4: BloqueGenerado = GetWorld()->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
+			break;
+		case 5: BloqueGenerado = GetWorld()->SpawnActor<ABloqueBurbuja>(ABloqueBurbuja::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
+			break;
+		case 6: BloqueGenerado = GetWorld()->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
+			break;
+		case 7: BloqueGenerado = GetWorld()->SpawnActor<ABloqueElectrico>(ABloqueElectrico::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
+			break;
+		case 8: BloqueGenerado = GetWorld()->SpawnActor<ABloqueOro>(ABloqueOro::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
+			break;
+		case 9: BloqueGenerado = GetWorld()->SpawnActor<ABloqueVidrio>(ABloqueVidrio::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
+			break;
+		case 10: BloqueGenerado = GetWorld()->SpawnActor<ABloqueArena>(ABloqueArena::StaticClass(), posicionBloque, FRotator(0.0f, 0.0f, 0.0f));
+			break;
+		default:
+			break;
+		}
+		if (BloqueGenerado)
+		{
+			aBloques.Add(BloqueGenerado);
+		}
+	}
 }
+
+//void ABomberman_l01GameMode::DestruirBloque()
+//{
+//	int numeroBloques = aBloques.Num();
+//	int NumeroAleatorio = FMath::RandRange(0, numeroBloques);
+//
+//	if (aBloques.Num() > 0)
+//	{
+//		BloqueActual = aBloques[NumeroAleatorio]; // Obtén el primer bloque
+//		if (BloqueActual)
+//		{
+//			BloqueActual->Destroy(); // Destruye el bloque
+//			GEngine->AddOnScreenDebugMessage(-1, -1, FColor::Red, TEXT("Bloque Eliminado"));
+//
+//
+//			// Realiza operaciones con el bloque
+//			//primerBloque->SetActorLocation(FVector(100.0f, 100.0f, 100.0f));
+//		}
+//	}
+//	else
+//	{
+//		// Cuando se destruyen todos, detenemos el timer
+//		GetWorld()->GetTimerManager().ClearTimer(tHDestruirBloques);
+//	}
+//}
+//void ABomberman_l01GameMode::SpawnBombaEnEspacioVacio()
+//{
+//	if (aEspaciosVacios.Num() > 0)
+//	{
+//		// Seleccionar un espacio vacío aleatorio
+//		int32 IndiceAleatorio = FMath::RandRange(0, aEspaciosVacios.Num() - 1);
+//		FVector PosicionBomba = aEspaciosVacios[IndiceAleatorio];
+//
+//		// Spawnear la bomba
+//		FActorSpawnParameters SpawnParams;
+//		ABomba* Bomba = GetWorld()->SpawnActor<ABomba>(ABomba::StaticClass(), PosicionBomba, FRotator::ZeroRotator, SpawnParams);
+//		
+//
+//		if (Bomba)
+//		{
+//			// Configurar la explosión para que llame a ManejarExplosion
+//			Bomba->OnExplota.AddDynamic(this, &ABomberman_l01GameMode::ManejarExplosion);
+//		}
+//	}
+//	for (int32 i = 1; i < 2; ++i)
+//	{
+//		if (aEspaciosVacios.Num() > 0)
+//		{
+//			int32 IndiceAleatorio = FMath::RandRange(0, aEspaciosVacios.Num() - 1);
+//			FVector PosicionNuevaBomba = aEspaciosVacios[IndiceAleatorio];
+//
+//			// Spawnear la nueva bomba
+//			FActorSpawnParameters SpawnParams;
+//			ABomba* NuevaBomba = GetWorld()->SpawnActor<ABomba>(ABomba::StaticClass(), PosicionNuevaBomba, FRotator::ZeroRotator, SpawnParams);
+//
+//			if (NuevaBomba)
+//			{
+//				// Configurar la explosión para que llame a ManejarExplosion
+//				NuevaBomba->OnExplota.AddDynamic(this, &ABomberman_l01GameMode::ManejarExplosion);
+//			}
+//		}
+//	}
+//}
+//void ABomberman_l01GameMode::ManejarExplosion(FVector PosicionExplosion)
+//{
+//	// Calcular las posiciones de los bloques en un radio de 2 bloques
+//	for (int32 OffsetX = -2; OffsetX <= 2; ++OffsetX)
+//	{
+//		for (int32 OffsetY = -2; OffsetY <= 2; ++OffsetY)
+//		{
+//			FVector PosicionBloque = PosicionExplosion + FVector(OffsetX * AnchoBloque, OffsetY * LargoBloque, 0.0f);
+//
+//			// Buscar y destruir el bloque en esta posición
+//			for (int32 i = 0; i < aBloques.Num(); ++i)
+//			{
+//				if (aBloques[i] && aBloques[i]->GetActorLocation().Equals(PosicionBloque, 1.0f))
+//				{
+//					aBloques[i]->Destroy();
+//					aBloques.RemoveAt(i);
+//					break;
+//				}
+//			}
+//		}
+//	}
+	
+//}
 	
