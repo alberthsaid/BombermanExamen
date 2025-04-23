@@ -63,16 +63,31 @@ void ABomberman_l01GameMode::BeginPlay()
 	for (int32 i = 0; i < 50; i++) {
 		aMapaBloques[i].SetNum(50);
 	}
+	for (int32 fila = 0; fila < 50; ++fila)
+	{
+		for (int32 columna = 0; columna < 50; ++columna)
+		{
+			if (fila == 0 || fila == 49 || columna == 0 || columna == 49) // Bordes del mapa
+			{
+				FVector posicionBloque = FVector(
+					XInicial + columna * AnchoBloque,
+					YInicial + fila * LargoBloque,
+					20.0f);
+				SpawnBloque(posicionBloque, 1); // Tipo 1 = BloqueAcero
+				aMapaBloques[fila][columna] = 1;
+			}
+		}
+	}
 	for (int32 tipo = 1; tipo <= 10; ++tipo)
 	{
-		int32 fila = FMath::RandRange(0, 49);
-		int32 columna = FMath::RandRange(0, 29);
+		int32 fila = FMath::RandRange(0, 60);
+		int32 columna = FMath::RandRange(0, 50);
 
 		// Si ya hay un bloque distinto de 0, busca otra posición
 		while (aMapaBloques[fila][columna] != 0)
 		{
-			fila = FMath::RandRange(0, 49);
-			columna = FMath::RandRange(0, 49);
+			fila = FMath::RandRange(0, 60);
+			columna = FMath::RandRange(0, 60);
 		}
 
 		aMapaBloques[fila][columna] = tipo;
@@ -80,18 +95,24 @@ void ABomberman_l01GameMode::BeginPlay()
 	for (int32 i = 1; i <= 200; ++i)
 	{
 
-		int32 fila = FMath::RandRange(0, 49);
-		int32 columna = FMath::RandRange(0, 49);
-		int32 tipo = FMath::RandRange(1, 10); // Genera un número aleatorio entre 1 y 10
+		int32 fila = FMath::RandRange(1, 59);
+		int32 columna = FMath::RandRange(1, 59);
+		int32 tipo = FMath::RandRange(2, 10); // Genera un número aleatorio entre 1 y 10
 
 		// Si ya hay un bloque distinto de 0, busca otra posición
 		while (aMapaBloques[fila][columna] != 0)
 		{
-			fila = FMath::RandRange(0, 49);
-			columna = FMath::RandRange(0, 49);
+			fila = FMath::RandRange(0, 60);
+			columna = FMath::RandRange(0, 60);
 		}
 
 		aMapaBloques[fila][columna] = tipo;
+		FVector posicionBloque = FVector(
+			XInicial + columna * AnchoBloque,
+			YInicial + fila * LargoBloque,
+			20.0f);
+		SpawnBloque(posicionBloque, tipo);
+
 	}
 
 
