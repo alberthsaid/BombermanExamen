@@ -37,15 +37,18 @@ public:
 	FTimerHandle tHDestruirBloques;
 	TArray<FVector> aEspaciosVaciosBordes;
 	TArray<ABloque*> aBloquesLadrillo;
-	void IniciarDesaparicionBloquesMadera();
+	//void IniciarDesaparicionBloquesMadera();
 	void SpawnPersonaje();
 	//void MoverBloques();
 	//void SpawnBloques();
 	void SpawnBloque(FVector posicion, int32 tipoBloque);
 	//void SpawnPersonajeCercaDeBloqueMadera();
-	void DestruirBloque();
-	void SpawnBombaEnEspacioVacio();
+	//void DestruirBloque();
+	//void SpawnBombaEnEspacioVacio();
 	void ManejarExplosion(FVector PosicionExplosion);
+
+	//void SpawnBombaCercaDeBloque();
+	void GenerarBloquesEnDivision(int32 division, int32 filaInicio, int32 filaFin, int32 columnaInicio, int32 columnaFin, int32 cantidadBloques);
 	
 };
 

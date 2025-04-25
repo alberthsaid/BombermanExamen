@@ -52,7 +52,6 @@ void ABloque::BeginPlay()
 void ABloque::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 	/*PocisionInicial += DireccionMovimiento * VelocidadMovimiento * DeltaTime;
 	if (PocisionInicial.Z >= AlturaMaxima)
 	{

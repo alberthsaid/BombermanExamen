@@ -1,0 +1,43 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-Bomberman_l01-8793.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\Bomberman_l01Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bloque.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueAcero.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueAgua.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueArena.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueBurbuja.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueConcreto.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueElectrico.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueLadrillo.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueMadera.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueOro.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueVidrio.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomba.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01Character.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01GameMode.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Plataforma.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bloque.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueAcero.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueAgua.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueArena.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueBurbuja.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueConcreto.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueElectrico.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueLadrillo.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueMadera.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueOro.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\BloqueVidrio.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomba.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01.init.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01Character.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Bomberman_l01GameMode.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Plataforma.gen.cpp.obj"
+"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\Default.rc2.res"
+/OUT:"C:\Users\hpvic\OneDrive\Documents\Unreal Projects\Bomberman_l01\Intermediate\Build\Win64\UE4Editor\Development\Bomberman_l01\UE4Editor-Bomberman_l01-8793.lib"

@@ -11,8 +11,8 @@
 		 if (Material.Succeeded())
 		 {
 			 MallaBloque->SetMaterial(0, Material.Object);
-			/* MallaBloque->SetRelativeScale3D(FVector(1.5f, 1.5f, 1.5f));
-			 MallaBloque->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));*/
+			 MallaBloque->SetRelativeScale3D(FVector(2.0f, 2.0f, 3.5f));
+			// MallaBloque->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));*/
 		 }
 	 }
 }

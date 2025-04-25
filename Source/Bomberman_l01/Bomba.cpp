@@ -25,7 +25,7 @@ ABomba::ABomba()
 	}
 
 	// Configurar valores predeterminados
-	TiempoParaExplotar = 3.0f; // 3 segundos antes de explotar
+	TiempoParaExplotar = 4.0f; // 3 segundos antes de explotar
 	RadioExplosion = 300.0f;
 
 }
